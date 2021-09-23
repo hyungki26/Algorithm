@@ -11,4 +11,4 @@ input = sys.stdin.readline
 n = int(input())
 numArr = list(map(int, input().split()))
 
-   
+

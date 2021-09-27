@@ -3,6 +3,8 @@
 이 값을 M이라고 한다. 그리고 나서 모든 점수를 점수/M*100으로 고쳤다.
 예를 들어, 세준이의 최고점이 70이고, 수학점수가 50이었으면 수학점수는 50/70*100이 되어 71.43점이 된다.
 세준이의 성적을 위의 방법대로 새로 계산했을 때, 새로운 평균을 구하는 프로그램을 작성하시오.
+5
+1 2 4 8 16 -> 38.75
 */
 package BOJ;
 
@@ -16,32 +18,26 @@ public class no_1546 {
 
         int N = sc.nextInt();
 
-        int index = 0;
-        int number  = N;
+        int[] arrN = new int[N];
+        int maxVal  = 0;
 
-        do{
-            String[] split = String.format("%2d", number).replace(" ", "0").split("");
+        float result = 0;
 
-            String s = split[0];
-            String s2 = split[1];
+        for(int i=0;i< N;i++){
+            arrN[i] = sc.nextInt();
 
-            //System.out.println(s + s2);
+            if(maxVal < arrN[i])
+                maxVal = arrN[i];
+        }
 
-            String[] split1 = s2.split("");
-            String firstString = split1[split1.length - 1];
+        //System.out.println(maxVal);
 
-            int sum = Integer.parseInt(s) + Integer.parseInt(s2);
+        for(int i=0;i< N;i++){
+            result += Float.valueOf(arrN[i])/maxVal*100;
+        }
 
-            String[] split2 = String.valueOf(sum).split("");
-            String secondString = split2[split2.length - 1];
+        System.out.println(result/N);
 
-            number = Integer.parseInt(firstString + secondString);
-
-            index++;
-
-        }while(number != N);
-
-        System.out.println(index);
 
         sc.close();
     }    

@@ -4,6 +4,7 @@
 */
 package BOJ;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class no_3052 {
@@ -13,10 +14,17 @@ public class no_3052 {
         Scanner sc = new Scanner(System.in);
 
         int[] arrN = new int[10];
+        ArrayList result = new ArrayList<>();
 
         for(int i=0;i < arrN.length;i++){
             arrN[i] = sc.nextInt();
+
+            if(!result.contains(arrN[i]%42)){
+                result.add(arrN[i]%42);
+            }
         }
+
+        System.out.println(result.size());
 
 
         sc.close();

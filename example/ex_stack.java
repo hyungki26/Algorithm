@@ -24,7 +24,7 @@ public class ex_stack {
 
         
         st.empty();     // stack이 비어있는제 check (비어있다면 true)
-        st.contains(1)  // stack에 1이 있는지 check (있다면 true)
+        st.contains(1);  // stack에 1이 있는지 check (있다면 true)
 
         st.clear(); // 전체 값 제거  
     }

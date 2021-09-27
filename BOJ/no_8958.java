@@ -14,6 +14,31 @@ public class no_8958 {
         
         Scanner sc = new Scanner(System.in);
 
-        int N = sc.nextInt();
+        String[] arr = new String[sc.nextInt()]; // 받은 숫자로 바로 스트링 객체 생성
+
+        for(int i=0;i<arr.length;i++){
+            arr[i] = sc.next();
+        }
+
+        sc.close();
+
+        for(int i=0;i<arr.length;i++){
+            int cnt = 0;
+            int sum = 0;
+
+            for(int j=0;j<arr[i].length();j++){
+                if(arr[i].charAt(j)== 'O'){
+                    cnt++;
+                }else{
+                    cnt = 0;
+                }
+
+                sum += cnt;
+            }
+
+            
+
+            System.out.println(sum);
+        }
     }
 }

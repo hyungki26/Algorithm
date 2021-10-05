@@ -14,7 +14,7 @@ import java.util.*;
 public class 제일작은수제거하기 {
 
     public int[] solution(int[] arr) {
-        int[] answer = new int[];
+        int[] answer = {};
 
         if(arr.length <2)
             return new int[]{-1};

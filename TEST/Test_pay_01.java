@@ -52,18 +52,18 @@ public class Test_pay_01 {
 
         int result = 0;
 
-        String[] stu = {"13123820 BusinessManagement AAA"
-                       ,"15047648 Economics AAA"
-                       ,"17869244 ComputerScience AAA"
-                       ,"19000000 ElectronicEngineering AAA"
-                       ,"14281264 Law AAA"
-                       ,"19000000 ElectronicEngineering BBB"
-                       ,"16188768 BusinessManagement BBB"
-                       ,"14634411 Law BBB"
-                       ,"16628760 Economics BBB"
-                       ,"14863606 BusinessManagement CCC"
-                       ,"13165700 Law CCC"
-                       ,"15215218 ComputerScience CCC"};
+        String[] stu = {"13123820 BM Aclass"
+                       ,"15047648 ECO Aclass"
+                       ,"17869244 CS Aclass"
+                       ,"19000000 EEng Aclass"
+                       ,"14281264 Law Aclass"
+                       ,"19000000 EEng Bclass"
+                       ,"16188768 BM Bclass"
+                       ,"14634411 Law Bclass"
+                       ,"16628760 ECO Bclass"
+                       ,"14863606 BM Cclass"
+                       ,"13165700 Law Cclass"
+                       ,"15215218 CS Cclass"};
         
         System.out.println(solution(stu, 4, 3, 3));
     }

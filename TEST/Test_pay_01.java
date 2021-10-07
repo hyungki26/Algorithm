@@ -21,6 +21,7 @@ public class Test_pay_01 {
         //System.out.println(Collections.frequency(Arrays.asList(stu_a), "19000000"));
         Map<String, String[]> stu_hash = new HashMap<String, String[]>();
 
+
         // 중복으로 동호회를 들어간 학생은 모두 삭제
         for(int i=0;i<stu.length;i++){
             String[] tmp = new String[]{stu[i][1], stu[i][2]};

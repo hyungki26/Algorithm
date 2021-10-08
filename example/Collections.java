@@ -9,9 +9,9 @@ Collection - SET : HashSet, ListedHashSet, TreeSet 중복제거되면서 저장�
             LIST : ArrayList, Vector, LinkedList
 MAP : SortedMap-TreeMap, HashTable, LinkedHashMap, HashMap
 
-*/
+*/ 
 
-public class Collections {
+public class collections {
 
     public static void main(String[] args){
 

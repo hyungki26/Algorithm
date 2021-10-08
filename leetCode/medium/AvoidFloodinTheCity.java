@@ -8,6 +8,7 @@ public class AvoidFloodinTheCity {
         int[] ans = new int[rains.length];
         
         Map<Integer, Integer> set1 = new LinkedHashMap<Integer,Integer>();
+        ArrayList<Integer> zeroSet = new ArrayList<Integer>();
 
         int zeroCnt = 0;
 
@@ -19,16 +20,24 @@ public class AvoidFloodinTheCity {
                 }else{
                     set1.put(rains[i], 1);
                 }
+
+                ans[i] = -1;
+
             }else{
+                zeroSet.add(i);
                 zeroCnt++;
             }
         }
 
         System.out.println(set1.toString());
+        System.out.println(Arrays.toString(ans));
+        System.out.println(zeroCnt);
 
-        for(int i=0;i<zeroCnt;i++){
-            set1
-        }
+        set1.forEach((key, value) -> { 
+            System.out.println("Key:" + key + ", Value:" + value);
+        });
+
+
         
 
         

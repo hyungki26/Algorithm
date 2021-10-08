@@ -14,7 +14,12 @@ public class twoSum {
         return new int[]{-1, -1};
     }
 
-    
+    public static void main(String[] args){
+        int[] aaa = {1,2,3,4,5};
+
+        
+
+    }
 
 
     

@@ -11,7 +11,7 @@ MAP : SortedMap-TreeMap, HashTable, LinkedHashMap, HashMap
 
 */ 
 
-public class collections {
+public class ex_collections {
 
     public static void main(String[] args){
 

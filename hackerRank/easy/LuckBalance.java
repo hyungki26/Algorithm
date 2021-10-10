@@ -28,7 +28,28 @@ class Result1 {
         // Write your code here
         int result = 0;
 
-        
+        // 2차원  배열  정렬 
+        Collections.sort(contests, new Comparator<List<Integer>>() {
+            @Override
+            public int compare(List<Integer> o1, List<Integer> o2) {
+                return o2.get(0) - o1.get(0);
+            }
+        });
+
+        System.out.println(contests.toString());
+
+        for(int i=0;i<contests.size();i++){
+            if(contests.get(i).get(1) == 0){
+                result += contests.get(i).get(0);
+            }else{
+                if(k == 0){
+                    result -= contests.get(i).get(0);
+                }else{
+                    result += contests.get(i).get(0);
+                    k--;
+                }
+            }
+        }
 
         return result;
 
@@ -39,7 +60,6 @@ class Result1 {
 public class LuckBalance {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
         String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
@@ -63,11 +83,10 @@ public class LuckBalance {
 
         int result = Result1.luckBalance(k, contests);
 
-        bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
+        System.out.println("RESULT:::"+result);
 
         bufferedReader.close();
-        bufferedWriter.close();
+
     }
     
 }

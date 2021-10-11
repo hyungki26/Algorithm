@@ -30,9 +30,9 @@ class Result2 {
             if( (sticks.get(i) + sticks.get(i+1) > sticks.get(i+2)) &&
                 (sticks.get(i+2) + sticks.get(i+1) > sticks.get(i)) &&
                 (sticks.get(i) + sticks.get(i+2) > sticks.get(i+1))){
-                result.add(sticks.get(i));
-                result.add(sticks.get(i+1));
                 result.add(sticks.get(i+2));
+                result.add(sticks.get(i+1));
+                result.add(sticks.get(i));
 
                 Collections.sort(result);
 

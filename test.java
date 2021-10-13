@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class test {
 
@@ -12,6 +12,10 @@ public class test {
         System.out.println(i);
 
         System.out.println("Hello world!");
+
+        String in = "12315132135";
+        char[] tmp = in.toCharArray();
+
     }
 
 

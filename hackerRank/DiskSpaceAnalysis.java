@@ -15,7 +15,6 @@ import static java.util.stream.Collectors.toList;
 class Result6 {
 
     public static int luckBalance(int x, List<Integer> space) {
-        
         // Write your code here
         Stack<Integer> st = new Stack<>();
 
@@ -56,8 +55,54 @@ class Result6 {
             }
         }
 
-        System.out.println(st.toString());
         return space.get(Collections.max(st));
+    }
+
+
+
+
+
+    public static int luckBalance2(int x, List<Integer> space) {
+        // Write your code here
+        int answer = 0;
+
+        ArrayList<Integer> result = new ArrayList<Integer>(); // 최소값 집합
+        Queue<Integer> chunk = new LinkedList<>();            //겹치는 부분
+
+        int min = 0;
+
+        for(int i=0;i<space.size() - x+1;i++){    // 5개이고 x=3이면 3번만 수행
+            
+            if(i == 0){ // 초기값 셋팅
+                min = Collections.min(space.subList(0, x)); 
+                chunk.addAll(space.subList(1, x)); //겹치는 부분 셋팅 [0,1,2]일 경우 [1,2]
+            }else{
+                
+                //min contaions chuck
+                if(chunk.contains(min)){ //기존 min값이 겹치는 부분에 있을 경우
+                    if(min > space.get(i+x-1)) //신규 값이 더 작을 경우 신규값으로 셋팅
+                        min = space.get(i+x-1);
+                }else{
+                    //기존 min값이 맨 앞이라 빠졌을 경우엔 겹치는 부분의 최소값과 비교
+                    if(Collections.min(chunk) >  space.get(i+x-1)){
+                        min = space.get(i+x-1); // 신규값이 작을 경우 
+                    }else{
+                        min = Collections.min(chunk); // 겹체는 부분이 작을 경우
+                    }
+                }
+
+                //겹치는 부분 설정
+                chunk.poll();
+                chunk.offer(space.get(i+x-1));
+            }
+            result.add(min);
+            
+            System.out.println("chunk::"+chunk.toString());
+            System.out.println("result::"+result.toString());
+        }
+        
+        answer = Collections.max(result);
+        return answer;
     }
 
 }
@@ -68,9 +113,7 @@ public class DiskSpaceAnalysis {
 
         String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
 
-        int n = Integer.parseInt(firstMultipleInput[0]);
-
-        int x = Integer.parseInt(firstMultipleInput[1]);
+        int x = Integer.parseInt(firstMultipleInput[0]);
 
         //List<Integer> space = new ArrayList<>();
 
@@ -79,7 +122,7 @@ public class DiskSpaceAnalysis {
             .collect(toList());
 
 
-        int result = Result6.luckBalance(x, space);
+        int result = Result6.luckBalance2(x, space);
 
         System.out.println("RESULT:::"+result);
 
@@ -96,8 +139,8 @@ space = [8,2,4,6]
 4 2
 8 2 4 6
 
-5 1
-1 2 3 1 2
+3
+2 5 4 6 8
 
 timestamp
 0000000

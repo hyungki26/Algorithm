@@ -17,7 +17,10 @@ public class binarySearch2 {
             }else if(arr[mid]< target){
                 left = mid +1;
             }else{
-                if(mid !=0 && arr[])
+                if(mid !=0 && arr[mid-1] == target){
+                    mid--;
+                }
+                break;
             }
         }
 
